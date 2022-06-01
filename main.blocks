@@ -1,0 +1,47 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="PI2x8O8^^k]0kos=NAjx">Player</variable><variable type="KIND_SpriteKind" id="!jEMx_{th/O_vnO%?5F+">Projectile</variable><variable type="KIND_SpriteKind" id="{o8ecFJw!1]XF38T]+b=">Food</variable><variable type="KIND_SpriteKind" id="uCadh/px=8RR)~hVogxq">Enemy</variable><variable id=":]tqIvwyLYk_#~n2j^i$">PlayerCharacter</variable><variable id="?M;yj9{2rD;U88^EW`dW">Donut</variable><variable id="IyY@3?~vZ0uCg-kcMq_B">otherSprite</variable></variables><comment id="8q!/JytGXbI6zOn}+No*" x="872" y="-185" h="188" w="578">Whatever is inside the "on game update" block will happen repeatedly every ___ amount of seconds. You can change the frequency the events happen by changing the seconds/milliseconds.
+
+Here, I have the donut switching to a random spot every 1 second.</comment><comment id="Y,qsrhsd@/QR;}zmg~?Y" x="0" y="0" h="200" w="200">Feel free to change the background color, the sprite images, the sprite names, etc!</comment><comment id="19NmBJ9p)7JVHs^/w{m!" x="881" y="157" h="150" w="336">When the dog overlaps the donut, we want:
+-The score to go up
+-The dog to reset to its original spot.</comment><comment id="f4dJ~%O,269$!9l-Oog2" x="390" y="531" h="457" w="750">YOUR JOB:
+
+-Add another object sprite and change its type/kind (different than "Food" or "Player"). Make sure this goes at the BOTTOM of the green “On start” block. 
+
+-Duplicate the "set Donut position to x pick random y pick random" block, change it from Donut to your new sprite name, and put it in the "on game update every 1000 ms" block. 
+
+-Add another blue "on sprite of kind Player overlaps otherSprite of kind _____" container block and change the SECOND "kind" to your new type for your new sprite. 
+
+Have different events happen! I put a bunch of ideas and how to find them in the PDF attached to the assignment in Google Classroom. There are more than I show there, feel free to experiment! 
+
+Choose at least TWO different events (other than score and move position) to put in the overlap block.</comment><block type="pxt-on-start" id="D~R8NKV.4o^yke@]Nnct" x="213" y="-5"><statement name="HANDLER"><block type="gamesetbackgroundcolor" id="wqOfbGH`l]=%NZFR=4RG"><value name="color"><shadow type="colorindexpicker" id="pO=:W+u+#O:,oy-~;o1)"><field name="index">7</field></shadow></value><next><block type="variables_set" id="j=4j(0Mi9M4%.!:f,PY~"><field name="VAR" id=":]tqIvwyLYk_#~n2j^i$">PlayerCharacter</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="H@_Dudatw`TNIxWW[@@Y"><value name="img"><shadow type="screen_image_picker" id="x7sDDWw8S7hSf4DweyJ_"><field name="img">img`
+. . 4 4 4 . . . . 4 4 4 . . . . 
+. 4 5 5 5 e . . e 5 5 5 4 . . . 
+4 5 5 5 5 5 e e 5 5 5 5 5 4 . . 
+4 5 5 4 4 5 5 5 5 4 4 5 5 4 . . 
+e 5 4 4 5 5 5 5 5 5 4 4 5 e . . 
+. e e 5 5 5 5 5 5 5 5 e e . . . 
+. . e 5 f 5 5 5 5 f 5 e . . . . 
+. . f 5 5 5 4 4 5 5 5 f . . f f 
+. . f 4 5 5 f f 5 5 6 f . f 5 f 
+. . . f 6 6 6 6 6 6 4 4 f 5 5 f 
+. . . f 4 5 5 5 5 5 5 4 4 5 f . 
+. . . f 5 5 5 5 5 4 5 5 f f . . 
+. . . f 5 f f f 5 f f 5 f . . . 
+. . . f f . . f f . . f f . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"x7sDDWw8S7hSf4DweyJ_"}}</data></shadow></value><value name="kind"><shadow type="spritekind" id="r*OIpSK[VccBxkM(-UR-"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="game_control_sprite" id="`t*7qHO41Vo(pb4%/w)R"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get" id="QECNJJ:{#cB~#~ezo5p#"><field name="VAR" id=":]tqIvwyLYk_#~n2j^i$">PlayerCharacter</field></block></value><next><block type="spritesetsetstayinscreen" id="_3t!kM|H$=_W]JA$60Aj"><value name="sprite"><block type="variables_get" id="q?D:D|I3idyA|`-R%SJ{"><field name="VAR" id=":]tqIvwyLYk_#~n2j^i$">PlayerCharacter</field></block></value><value name="on"><shadow type="toggleOnOff" id="|ICIcXp1OFx-L7E$x#qg"><field name="on">true</field></shadow></value><next><block type="variables_set" id="eO)nPe!j~.VW/~.=IK?6"><field name="VAR" id="?M;yj9{2rD;U88^EW`dW">Donut</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="6X?Q^]{XfW5WelDIRIf{"><value name="img"><shadow type="screen_image_picker" id="$dUl^BtL6ZD~;w5mkm6F"><field name="img">img`
+. . . . . . b b b b a a . . . . 
+. . . . b b d d d 3 3 3 a a . . 
+. . . b d d d 3 3 3 3 3 3 a a . 
+. . b d d 3 3 3 3 3 3 3 3 3 a . 
+. b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+. b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+a a 3 3 3 d d d a a 4 4 4 e e . 
+. e a a a a a a 4 4 4 4 e e . . 
+. . e e b b 4 4 4 4 b e e . . . 
+. . . e e e e e e e e . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"$dUl^BtL6ZD~;w5mkm6F"}}</data></shadow></value><value name="kind"><shadow type="spritekind" id="uJ@[BulIJ[y]Dg~`e2j_"><field name="MEMBER">Food</field></shadow></value></block></value></block></next></block></next></block></next></block></next></block></statement></block><block type="gameinterval" id="T)~{LDh~H_O]VJ5bCEeI" x="873" y="15"><value name="period"><shadow type="timePicker" id="3fyQ|%3fw0.zHuOXm:xv"><field name="ms">1000</field></shadow></value><statement name="HANDLER"><block type="spritesetpos" id="qN?-L:#RXih1?13qSO:w"><value name="sprite"><block type="variables_get" id="]h}o7pAk$8Q%ukK5kVbH"><field name="VAR" id="?M;yj9{2rD;U88^EW`dW">Donut</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">31</field></shadow><block type="device_random" id="-]ax7x8kRx3q=qU$F:bX"><value name="min"><shadow type="math_number" id="^X3QuRYqJibx_v?A)X3["><field name="NUM">160</field></shadow></value><value name="limit"><shadow type="math_number" id="+sZEZ,C,iXAkuvgfjb.$"><field name="NUM">0</field></shadow></value></block></value><value name="y"><shadow type="positionPicker"><field name="index">87</field></shadow><block type="device_random" id=";.6+(%[]5{c$7%1_Y,|4"><value name="min"><shadow type="math_number" id="fycCslLb}28T]OMbB7pO"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number" id="S~UyrBb~x#:uM.j2khG0"><field name="NUM">120</field></shadow></value></block></value></block></statement></block><block type="spritesoverlap" id="_TZqAFmOyq#%bUXj*NTC" x="873" y="315"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="|43x,4H@W7M39;9Sn19Y"><mutation typename="Sprite"></mutation><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="${f?JNqde3oaqm6U)(~L"><field name="MEMBER">Player</field></shadow></value><value name="HANDLER_DRAG_PARAM_otherSprite"><shadow type="argument_reporter_custom" id="9if,k7=:L#70avnS,b)G"><mutation typename="Sprite"></mutation><field name="VALUE">otherSprite</field></shadow></value><value name="otherKind"><shadow type="spritekind" id="iyBGn]H*s(G4SKl-|*0A"><field name="MEMBER">Food</field></shadow></value></block></xml>
